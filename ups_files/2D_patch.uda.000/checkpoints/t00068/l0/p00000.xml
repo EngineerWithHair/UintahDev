@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Uintah_Output>
+  <Variable type="NCVariable&lt;double&gt;">
+    <variable>NC_CCweight</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>0</start>
+    <end>2816</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;double&gt;">
+    <variable>p.color</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>3072</start>
+    <numParticles>70</numParticles>
+    <end>3632</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Matrix3&gt;">
+    <variable>p.deformationMeasure</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>4096</start>
+    <numParticles>70</numParticles>
+    <end>9136</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Vector&gt;">
+    <variable>p.displacement</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>9216</start>
+    <numParticles>70</numParticles>
+    <end>10896</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;int&gt;">
+    <variable>p.localizedMPM</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>11264</start>
+    <numParticles>70</numParticles>
+    <end>11544</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;double&gt;">
+    <variable>p.mass</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>12288</start>
+    <numParticles>70</numParticles>
+    <end>12848</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;long64&gt;">
+    <variable>p.particleID</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>13312</start>
+    <numParticles>70</numParticles>
+    <end>13872</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Matrix3&gt;">
+    <variable>p.size</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>14336</start>
+    <numParticles>70</numParticles>
+    <end>19376</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Matrix3&gt;">
+    <variable>p.stress</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>19456</start>
+    <numParticles>70</numParticles>
+    <end>24496</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;double&gt;">
+    <variable>p.temperature</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>24576</start>
+    <numParticles>70</numParticles>
+    <end>25136</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Vector&gt;">
+    <variable>p.temperatureGradient</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>25600</start>
+    <numParticles>70</numParticles>
+    <end>27280</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Vector&gt;">
+    <variable>p.velocity</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>27648</start>
+    <numParticles>70</numParticles>
+    <end>29328</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;double&gt;">
+    <variable>p.volume</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>29696</start>
+    <numParticles>70</numParticles>
+    <end>30256</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Point&gt;">
+    <variable>p.x</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>30720</start>
+    <numParticles>70</numParticles>
+    <end>32400</end>
+    <filename>p00000.data</filename>
+  </Variable>
+</Uintah_Output>
