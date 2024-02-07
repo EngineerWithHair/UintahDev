@@ -1,0 +1,79 @@
+/*
+ * The MIT License
+ *
+ * Copyright (c) 1997-2023 The University of Utah
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+#ifndef SCI_CUDA_DEFS_H
+#define SCI_CUDA_DEFS_H
+
+
+
+#ifdef HAVE_CUDA
+
+#include <cuda.h>
+#include <cuda_runtime.h>
+#include <cuda_runtime_api.h>
+
+#ifdef __CUDACC__
+  #define HOST_DEVICE __host__ __device__
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <stdio.h>
+
+// Error handling wrapper for CUDA RUNTIME API calls (no-sync)
+#define CUDA_RT_SAFE_CALL( call ) {                                            \
+    cudaError err = call;                                                      \
+    if(err != cudaSuccess) {                                                   \
+        fprintf(stderr, "\nCUDA error %i in file '%s', on line %i : %s.\n\n",  \
+                err, __FILE__, __LINE__, cudaGetErrorString( err) );           \
+        exit(EXIT_FAILURE);                                                    \
+    } }
+
+// Error handling wrapper for CUDA Driver API calls (no-sync)
+#define CUDA_DRV_SAFE_CALL( call ) {                                           \
+    CUresult err = call;                                                       \
+    if(err != CUDA_SUCCESS) {                                                  \
+        fprintf(stderr, "\nCUDA driver error %i in file '%s' on line %i.\n\n", \
+                err, __FILE__, __LINE__ );                                     \
+        exit(EXIT_FAILURE);                                                    \
+    } }
+
+// Error handling wrapper for CUDA Rand API calls
+#define CURAND_CALL( call ) {                                                  \
+    curandStatus status = call;                                                \
+    if(status != CURAND_STATUS_SUCCESS) {                                      \
+        fprintf(stderr, "cuRand error %i in file '%s' on line %i.\n\n",        \
+                status, __FILE__, __LINE__ );                                  \
+        exit(EXIT_FAILURE);                                                    \
+    } }
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // HAVE_CUDA
+
+#endif // SCI_CUDA_DEFS_H

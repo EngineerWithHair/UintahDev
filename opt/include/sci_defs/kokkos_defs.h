@@ -1,0 +1,214 @@
+/*
+ * The MIT License
+ *
+ * Copyright (c) 1997-2023 The University of Utah
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+#ifndef SCI_KOKKOS_DEFS_H
+#define SCI_KOKKOS_DEFS_H
+
+/*
+   For reference, if Kokkos is enabled then the following flags are used:
+
+   
+
+   
+
+   Note, the above info is used to tell when the user configures
+   against a new Kokkos, so please leave it here.
+*/
+
+
+
+
+
+// Create some data types for non-Kokkos CPU runs.
+namespace UintahSpaces{
+  class CPU {};          // These are used for legacy Uintah CPU tasks
+                         // (e.g. no Kokkos)
+  class HostSpace {};    // And also to refer to any data in host
+                         // memory
+
+  class GPU {};          // These are used for legacy Uintah GPU tasks
+                         // (e.g. no Kokkos)
+  class DeviceSpace {};  // And also to refer to any data in device
+                         // memory
+
+// #if defined(HAVE_OPENMPTARGET)
+//   class OpenMPTarget {}; // To describe data in Kokkos OpenMPTarget Memory
+//   class OpenMPTargetSpace {};
+// #endif //if defined(HAVE_OPENMPTARGET)
+}
+
+#if defined(HAVE_KOKKOS)
+
+#include <Kokkos_Core.hpp>
+#include <Kokkos_Macros.hpp>
+#include <Kokkos_Random.hpp>
+
+#define GPU_FUNCTION             KOKKOS_FUNCTION
+#define GPU_INLINE_FUNCTION      KOKKOS_INLINE_FUNCTION
+#define GPU_FORCEINLINE_FUNCTION KOKKOS_FORCEINLINE_FUNCTION
+
+namespace Kokkos {
+  // Kokkos is not included in this build.  Create
+  // some stub types so these types at least exist.
+
+#if !defined(KOKKOS_ENABLE_OPENMP)
+  // For the Kokkos Scheduler + Kokkos GPU but not Kokkos OpenMP.
+  // This logic may be temporary if all GPU functionality is merged
+  // into the Kokkos scheduler and the Unified Scheduler is no longer
+  // used for GPU logic.  Brad P Jun 2018
+    class OpenMP {};
+#endif
+}
+
+#if defined(KOKKOS_USING_GPU)
+    #define USE_KOKKOS_FENCE
+
+ // #if defined(KOKKOS_ENABLE_OPENMP) && defined(KOKKOS_ENABLE_DEPRECATED_CODE_3)
+ //   #define USE_KOKKOS_PARTITION_MASTER
+ // #endif
+
+#endif
+
+#if defined(KOKKOS_ENABLE_CUDA)
+// int3 is defined in Cuda
+
+#elif defined(KOKKOS_ENABLE_HIP)
+// int3 is defined in Hip
+
+#define HOST_DEVICE __host__ __device__
+
+// #elif defined(KOKKOS_ENABLE_SYCL)
+// int3 requires access methods .x() vs direct access .x
+// so roll our own for now as is done for OpenMPTarget
+
+// using int3 = sycl::int3;
+
+#elif defined(KOKKOS_ENABLE_SYCL) || \
+      defined(KOKKOS_ENABLE_OPENMPTARGET) || \
+      defined(KOKKOS_ENABLE_OPENACC)
+
+#define HOST_DEVICE
+
+#define __host__
+#define __device__
+#define __shared__
+
+struct int3
+{
+  int3() : x(0), y(0), z(0) {}
+  int3(int _x, int _y, int _z) : x(_x), y(_y), z(_z) {}
+  int3(const int3 &copy) : x(copy.x), y(copy.y), z(copy.z) {}
+
+  int& operator[](const int& i) { return xyz[i]; }
+
+  union {
+    struct {
+      int xyz[3];
+    };
+    struct {
+      int x, y, z;
+    };
+  };
+};
+
+inline int3 make_int3(int x, int y, int z) { return int3(x, y, z); }
+
+struct uint3
+{
+  uint3() : x(0), y(0), z(0) {}
+  uint3(unsigned int _x, unsigned int _y, unsigned int _z) : x(_x), y(_y), z(_z) {}
+  uint3(const uint3 &copy) : x(copy.x), y(copy.y), z(copy.z) {}
+
+  unsigned int& operator[](const int& i) { return xyz[i]; }
+
+  union {
+    struct {
+      unsigned int xyz[3];
+    };
+    struct {
+      unsigned int x, y, z;
+    };
+  };
+};
+
+inline uint3 make_uint3(unsigned int x, unsigned int y, unsigned int z) { return uint3(x, y, z); }
+
+struct float3
+{
+  float3() : x(0), y(0), z(0) {}
+  float3(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
+  float3(const float3 &copy) : x(copy.x), y(copy.y), z(copy.z) {}
+
+  float& operator[](const int& i) { return xyz[i]; }
+
+  union {
+    struct {
+      float xyz[3];
+    };
+    struct {
+      float x, y, z;
+    };
+  };
+};
+
+inline float3 make_float3(float x, float y, float z) { return float3(x, y, z); }
+
+
+struct double3
+{
+  double3() : x(0), y(0), z(0) {}
+  double3(double _x, double _y, double _z) : x(_x), y(_y), z(_z) {}
+  double3(const double3 &copy) : x(copy.x), y(copy.y), z(copy.z) {}
+
+  double& operator[](const int& i) { return xyz[i]; }
+
+  union {
+    struct {
+      double xyz[3];
+    };
+    struct {
+      double x, y, z;
+    };
+  };
+};
+
+inline double3 make_double3(double x, double y, double z) { return double3(x, y, z); }
+
+#endif
+
+#else //#if defined(HAVE_KOKKOS)
+
+#define KOKKOS_LAMBDA [&]
+
+  // Kokkos not included in this build. Create some stub types so
+  // these types at least exist.
+  namespace Kokkos {
+    class OpenMP {};
+    class HostSpace {};
+    class DefaultExecutionSpace {};
+  }
+
+#endif //  #if defined(HAVE_KOKKOS)
+
+#endif
