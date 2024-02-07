@@ -68,6 +68,8 @@ namespace Uintah {
       const VarLabel* pVelGradLabel_preReloc;
       const VarLabel* pStressLabel;
       const VarLabel* pStressLabel_preReloc;
+      const VarLabel* pInjuryLabel;
+      const VarLabel* pInjuryLabel_preReloc;
       const VarLabel* pVolumeLabel;
       const VarLabel* pVolumeLabel_preReloc;
       const VarLabel* pMassLabel;
