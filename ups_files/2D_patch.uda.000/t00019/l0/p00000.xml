@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Uintah_Output>
+  <Variable type="ParticleVariable&lt;Point&gt;">
+    <variable>p.x</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>0</start>
+    <numParticles>4</numParticles>
+    <end>96</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Matrix3&gt;">
+    <variable>p.deformationMeasure</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>1024</start>
+    <numParticles>4</numParticles>
+    <end>1312</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;long64&gt;">
+    <variable>p.particleID</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>2048</start>
+    <numParticles>4</numParticles>
+    <end>2080</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;double&gt;">
+    <variable>p.volume</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>3072</start>
+    <numParticles>4</numParticles>
+    <end>3104</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Vector&gt;">
+    <variable>p.velocity</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>4096</start>
+    <numParticles>4</numParticles>
+    <end>4192</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="ParticleVariable&lt;Matrix3&gt;">
+    <variable>p.stress</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>5120</start>
+    <numParticles>4</numParticles>
+    <end>5408</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="NCVariable&lt;double&gt;">
+    <variable>g.mass</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>6144</start>
+    <end>11976</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="NCVariable&lt;double&gt;">
+    <variable>g.mass</variable>
+    <index>1</index>
+    <patch>0</patch>
+    <start>12288</start>
+    <end>18120</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="NCVariable&lt;Matrix3&gt;">
+    <variable>g.stressFS</variable>
+    <index>0</index>
+    <patch>0</patch>
+    <start>18432</start>
+    <end>70920</end>
+    <filename>p00000.data</filename>
+  </Variable>
+  <Variable type="NCVariable&lt;Matrix3&gt;">
+    <variable>g.stressFS</variable>
+    <index>1</index>
+    <patch>0</patch>
+    <start>71680</start>
+    <end>124168</end>
+    <filename>p00000.data</filename>
+  </Variable>
+</Uintah_Output>

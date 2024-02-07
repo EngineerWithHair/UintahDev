@@ -83,6 +83,11 @@ namespace Uintah {
                                      const MPMMaterial* matl,
                                      DataWarehouse* old_dw,
                                      DataWarehouse* new_dw);
+                                     
+    virtual void computeInjury(const PatchSubset* patches,
+                                     const MPMMaterial* matl,
+                                     DataWarehouse* old_dw,
+                                     DataWarehouse* new_dw);
 
     virtual void computeStressTensorImplicit(const PatchSubset* patches,
                                              const MPMMaterial* matl,

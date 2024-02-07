@@ -838,6 +838,7 @@ SerialMPM::scheduleTimeAdvance(const LevelP & level,
   scheduleComputeParticleGradients(       sched, patches, matls);
   scheduleComputeStressTensor(            sched, patches, matls);
   // JIAHAO: add shceduleComputeInjury here:
+  scheduleComputeInjury(                  sched, patches, matls);
 
   if(flags->d_computeScaleFactor){
     scheduleComputeParticleScaleFactor(   sched, patches, matls);
@@ -1206,6 +1207,37 @@ void SerialMPM::scheduleComputeStressTensor(SchedulerP& sched,
   if (flags->d_reductionVars->accStrainEnergy)
     scheduleComputeAccStrainEnergy(sched, patches, matls);
 
+}
+
+void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
+                                            const PatchSet* patches,
+                                            const MaterialSet* matls)
+{
+  if (!flags->doMPMOnLevel(getLevel(patches)->getIndex(),
+                           getLevel(patches)->getGrid()->numLevels()))
+    return;
+
+  printSchedule(patches,cout_doing,"MPM::scheduleComputeInjury");
+
+  unsigned int numMatls = m_materialManager->getNumMatls( "MPM" );
+  Task* t = scinew Task("MPM::computeStressTensor",
+                        this, &SerialMPM::computeInjury);
+
+  // JIAHAO: I probably don't need this
+  /*for(unsigned int m = 0; m < numMatls; m++){
+    MPMMaterial* mpm_matl = (MPMMaterial*) m_materialManager->getMaterial( "MPM", m);
+    const MaterialSubset* matlset = mpm_matl->thisMaterial();
+
+    ConstitutiveModel* cm = mpm_matl->getConstitutiveModel();
+    cm->addComputesAndRequires(t, mpm_matl, patches);
+
+    t->computes(lb->p_qLabel_preReloc, matlset);
+  }*/
+
+  sched->addTask(t, patches, matls);
+  std::cout<<"*************"<<std::endl;
+  std::cout<<"Task t created and added to sched for computing injury"<<std::endl;
+  std::cout<<"*************"<<std::endl;
 }
 
 
@@ -3169,6 +3201,30 @@ void SerialMPM::computeStressTensor(const ProcessorGroup*,
 }
 
 // JIAHAO: computeInjury here:
+void SerialMPM::computeInjury(const ProcessorGroup*,
+                                    const PatchSubset* patches,
+                                    const MaterialSubset* matls,
+                                    DataWarehouse* old_dw,
+                                    DataWarehouse* new_dw)
+{
+
+  printTask(patches, patches->get(0),cout_doing,
+            "Doing MPM::computeInjury");
+
+  for(unsigned int m = 0; m < m_materialManager->getNumMatls( "MPM" ); m++){
+
+    MPMMaterial* mpm_matl = (MPMMaterial*) m_materialManager->getMaterial( "MPM", m);
+    ConstitutiveModel* cm = mpm_matl->getConstitutiveModel();
+    cm->setWorld(d_myworld);
+    std::cout<<"*************"<<std::endl;
+    std::cout<<"cm->setWorld"<<std::endl;
+    std::cout<<"*************"<<std::endl;
+    cm->computeInjury(patches, mpm_matl, old_dw, new_dw);
+    std::cout<<"*************"<<std::endl;
+    std::cout<<"cm->computeInjury"<<std::endl;
+    std::cout<<"*************"<<std::endl;
+  }
+}
 
 
 //______________________________________________________________________

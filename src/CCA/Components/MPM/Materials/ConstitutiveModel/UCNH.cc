@@ -798,6 +798,17 @@ void UCNH::computeStressTensor(const PatchSubset* patches,
 }
 //______________________________________________________________________
 //
+//JIAHAO: compute injury
+void UCNH::computeInjury(const PatchSubset* patches,
+                                const MPMMaterial* matl,
+                                DataWarehouse* old_dw,
+                                DataWarehouse* new_dw){
+
+std::cout<<"*************"<<std::endl;
+std::cout<<"UCNH: compute injury"<<std::endl;
+std::cout<<"*************"<<std::endl;
+
+}
 void UCNH::computeStressTensorImplicit(const PatchSubset* patches,
                                        const MPMMaterial* matl,
                                        DataWarehouse* old_dw,

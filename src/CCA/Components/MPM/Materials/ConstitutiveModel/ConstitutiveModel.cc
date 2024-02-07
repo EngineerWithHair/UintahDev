@@ -190,6 +190,15 @@ ConstitutiveModel::computeStressTensor(const PatchSubset*,
 }
 
 void
+ConstitutiveModel::computeInjury(const PatchSubset*,
+                                       const MPMMaterial*,
+                                       DataWarehouse*,
+                                       DataWarehouse*)
+{
+  throw InternalError("Stub Task: ConstitutiveModel::computeInjury ", __FILE__, __LINE__);
+}
+
+void
 ConstitutiveModel::computeStressTensorImplicit(const PatchSubset*,
                                                const MPMMaterial*,
                                                DataWarehouse*,

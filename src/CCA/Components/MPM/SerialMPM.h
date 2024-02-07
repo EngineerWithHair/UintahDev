@@ -308,6 +308,13 @@ protected:
                                    const MaterialSubset* matls,
                                    DataWarehouse* old_dw,
                                    DataWarehouse* new_dw);
+  
+  // JIAHAO: compute injury
+  virtual void computeInjury(const ProcessorGroup*,
+                                   const PatchSubset* patches,
+                                   const MaterialSubset* matls,
+                                   DataWarehouse* old_dw,
+                                   DataWarehouse* new_dw);
 
   //////////
   // Compute Accumulated Strain Energy
@@ -501,6 +508,8 @@ protected:
                                          const MaterialSet*);
 
   virtual void scheduleComputeStressTensor(SchedulerP&, const PatchSet*,
+                                           const MaterialSet*);
+  virtual void scheduleComputeInjury(SchedulerP&, const PatchSet*,
                                            const MaterialSet*);
 
   void scheduleComputeAccStrainEnergy(SchedulerP&, const PatchSet*,

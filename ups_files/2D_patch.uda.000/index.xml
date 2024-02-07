@@ -5,8 +5,87 @@
   <outputFormat>UDA</outputFormat>
   <Meta>
     <username>jwei34</username>
-    <date>Wed Feb  7 10:25:38 2024</date>
+    <date>Wed Feb  7 11:45:57 2024</date>
     <endianness>little_endian</endianness>
     <nBits>64</nBits>
   </Meta>
+  <globals>
+    <variable href="KineticEnergy.dat" type="ReductionVariable&lt;double&gt;" name="KineticEnergy"/>
+    <variable href="TotalMass.dat" type="ReductionVariable&lt;double&gt;" name="TotalMass"/>
+    <variable href="StrainEnergy.dat" type="ReductionVariable&lt;double&gt;" name="StrainEnergy"/>
+    <variable href="CenterOfMassPosition.dat" type="ReductionVariable&lt;Vector&gt;" name="CenterOfMassPosition"/>
+    <variable href="TotalMomentum.dat" type="ReductionVariable&lt;Vector&gt;" name="TotalMomentum"/>
+  </globals>
+  <variables>
+    <variable type="ParticleVariable&lt;Point&gt;" name="p.x" numMaterials="1"/>
+    <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.deformationMeasure" numMaterials="1"/>
+    <variable type="ParticleVariable&lt;long64&gt;" name="p.particleID" numMaterials="1"/>
+    <variable type="ParticleVariable&lt;double&gt;" name="p.volume" numMaterials="1"/>
+    <variable type="ParticleVariable&lt;Vector&gt;" name="p.velocity" numMaterials="1"/>
+    <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.stress" numMaterials="1"/>
+    <variable type="NCVariable&lt;double&gt;" name="g.mass" numMaterials="2"/>
+    <variable type="NCVariable&lt;Matrix3&gt;" name="g.stressFS" numMaterials="2"/>
+  </variables>
+  <timesteps>
+    <timestep href="t00001/timestep.xml" time="0.13093073414159545" oldDelt="0.13093073414159545">1</timestep>
+    <timestep href="t00002/timestep.xml" time="0.2618614682831909" oldDelt="0.13093073414159545">2</timestep>
+    <timestep href="t00003/timestep.xml" time="0.39279220242478635" oldDelt="0.13093073414159545">3</timestep>
+    <timestep href="t00004/timestep.xml" time="0.5237229365663818" oldDelt="0.13093073414159545">4</timestep>
+    <timestep href="t00005/timestep.xml" time="0.65465367070797731" oldDelt="0.13093073414159545">5</timestep>
+    <timestep href="t00006/timestep.xml" time="0.78558440484957281" oldDelt="0.13093073414159545">6</timestep>
+    <timestep href="t00007/timestep.xml" time="0.91651513899116832" oldDelt="0.13093073414159545">7</timestep>
+    <timestep href="t00008/timestep.xml" time="1.0474458731327638" oldDelt="0.13093073414159545">8</timestep>
+    <timestep href="t00009/timestep.xml" time="1.1783766072743593" oldDelt="0.13093073414159545">9</timestep>
+    <timestep href="t00010/timestep.xml" time="1.3013928863845177" oldDelt="0.12301627911015832">10</timestep>
+    <timestep href="t00011/timestep.xml" time="1.418162985850157" oldDelt="0.11677009946563924">11</timestep>
+    <timestep href="t00012/timestep.xml" time="1.5298164299414696" oldDelt="0.11165344409131256">12</timestep>
+    <timestep href="t00013/timestep.xml" time="1.6371640815867807" oldDelt="0.10734765164531118">13</timestep>
+    <timestep href="t00014/timestep.xml" time="1.740813562062909" oldDelt="0.10364948047612832">14</timestep>
+    <timestep href="t00015/timestep.xml" time="1.8412354112035731" oldDelt="0.10042184914066421">15</timestep>
+    <timestep href="t00016/timestep.xml" time="1.9388036246586771" oldDelt="0.097568213455104011">16</timestep>
+    <timestep href="t00017/timestep.xml" time="2.0338218162782438" oldDelt="0.095018191619566927">17</timestep>
+    <timestep href="t00018/timestep.xml" time="2.1265408227502083" oldDelt="0.092719006471964668">18</timestep>
+    <timestep href="t00019/timestep.xml" time="2.2192598292221728" oldDelt="0.092719006471964668">19</timestep>
+    <timestep href="t00020/timestep.xml" time="2.3119788356941373" oldDelt="0.092719006471964668">20</timestep>
+    <timestep href="t00021/timestep.xml" time="2.4046978421661018" oldDelt="0.092719006471964668">21</timestep>
+    <timestep href="t00022/timestep.xml" time="2.4974168486380663" oldDelt="0.092719006471964668">22</timestep>
+    <timestep href="t00023/timestep.xml" time="2.5901358551100309" oldDelt="0.092719006471964668">23</timestep>
+    <timestep href="t00024/timestep.xml" time="2.6828548615819954" oldDelt="0.092719006471964668">24</timestep>
+    <timestep href="t00025/timestep.xml" time="2.7755738680539599" oldDelt="0.092719006471964668">25</timestep>
+    <timestep href="t00026/timestep.xml" time="2.8682928745259244" oldDelt="0.092719006471964668">26</timestep>
+    <timestep href="t00027/timestep.xml" time="2.9610118809978889" oldDelt="0.092719006471964668">27</timestep>
+    <timestep href="t00028/timestep.xml" time="3.0537308874698534" oldDelt="0.092719006471964668">28</timestep>
+    <timestep href="t00029/timestep.xml" time="3.146449893941818" oldDelt="0.092719006471964668">29</timestep>
+    <timestep href="t00030/timestep.xml" time="3.2391689004137825" oldDelt="0.092719006471964668">30</timestep>
+    <timestep href="t00031/timestep.xml" time="3.331887906885747" oldDelt="0.092719006471964668">31</timestep>
+    <timestep href="t00032/timestep.xml" time="3.4246069133577115" oldDelt="0.092719006471964668">32</timestep>
+    <timestep href="t00033/timestep.xml" time="3.517325919829676" oldDelt="0.092719006471964668">33</timestep>
+    <timestep href="t00034/timestep.xml" time="3.6100449263016405" oldDelt="0.092719006471964668">34</timestep>
+    <timestep href="t00035/timestep.xml" time="3.702763932773605" oldDelt="0.092719006471964668">35</timestep>
+    <timestep href="t00036/timestep.xml" time="3.7954829392455696" oldDelt="0.092719006471964668">36</timestep>
+    <timestep href="t00037/timestep.xml" time="3.8882019457175341" oldDelt="0.092719006471964668">37</timestep>
+    <timestep href="t00038/timestep.xml" time="3.9809209521894986" oldDelt="0.092719006471964668">38</timestep>
+    <timestep href="t00039/timestep.xml" time="4.0736399586614631" oldDelt="0.092719006471964668">39</timestep>
+    <timestep href="t00040/timestep.xml" time="4.1663589651334281" oldDelt="0.092719006471964668">40</timestep>
+    <timestep href="t00041/timestep.xml" time="4.259077971605393" oldDelt="0.092719006471964668">41</timestep>
+    <timestep href="t00042/timestep.xml" time="4.351796978077358" oldDelt="0.092719006471964668">42</timestep>
+    <timestep href="t00043/timestep.xml" time="4.444515984549323" oldDelt="0.092719006471964668">43</timestep>
+    <timestep href="t00044/timestep.xml" time="4.5372349910212879" oldDelt="0.092719006471964668">44</timestep>
+    <timestep href="t00045/timestep.xml" time="4.6299539974932529" oldDelt="0.092719006471964668">45</timestep>
+    <timestep href="t00046/timestep.xml" time="4.7226730039652178" oldDelt="0.092719006471964668">46</timestep>
+    <timestep href="t00047/timestep.xml" time="4.8153920104371828" oldDelt="0.092719006471964668">47</timestep>
+    <timestep href="t00048/timestep.xml" time="4.9081110169091478" oldDelt="0.092719006471964668">48</timestep>
+    <timestep href="t00049/timestep.xml" time="5.0008300233811127" oldDelt="0.092719006471964668">49</timestep>
+    <timestep href="t00050/timestep.xml" time="5.0935490298530777" oldDelt="0.092719006471964668">50</timestep>
+    <timestep href="t00051/timestep.xml" time="5.1862680363250426" oldDelt="0.092719006471964668">51</timestep>
+    <timestep href="t00052/timestep.xml" time="5.2789870427970076" oldDelt="0.092719006471964668">52</timestep>
+    <timestep href="t00053/timestep.xml" time="5.3717060492689725" oldDelt="0.092719006471964668">53</timestep>
+    <timestep href="t00054/timestep.xml" time="5.4644250557409375" oldDelt="0.092719006471964668">54</timestep>
+    <timestep href="t00055/timestep.xml" time="5.5571440622129025" oldDelt="0.092719006471964668">55</timestep>
+    <timestep href="t00056/timestep.xml" time="5.6498630686848674" oldDelt="0.092719006471964668">56</timestep>
+    <timestep href="t00057/timestep.xml" time="5.7425820751568324" oldDelt="0.092719006471964668">57</timestep>
+    <timestep href="t00058/timestep.xml" time="5.8353010816287973" oldDelt="0.092719006471964668">58</timestep>
+    <timestep href="t00059/timestep.xml" time="5.9280200881007623" oldDelt="0.092719006471964668">59</timestep>
+    <timestep href="t00060/timestep.xml" time="6.0207390945727273" oldDelt="0.092719006471964668">60</timestep>
+  </timesteps>
 </Uintah_DataArchive>
