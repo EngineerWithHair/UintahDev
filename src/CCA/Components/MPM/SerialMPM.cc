@@ -425,7 +425,7 @@ void SerialMPM::scheduleInitialize(const LevelP& level,
   t->computes(lb->pParticleIDLabel);
   t->computes(lb->pDeformationMeasureLabel);
   t->computes(lb->pStressLabel);
-  // add here lb->injury
+  // JIAHAO: add here lb->injury
   t->computes(lb->pVelGradLabel);
   t->computes(lb->pTemperatureGradientLabel);
   t->computes(lb->pSizeLabel);
@@ -836,6 +836,7 @@ SerialMPM::scheduleTimeAdvance(const LevelP & level,
   scheduleInterpolateToParticlesAndUpdate(sched, patches, matls);
   scheduleComputeParticleGradients(       sched, patches, matls);
   scheduleComputeStressTensor(            sched, patches, matls);
+  // JIAHAO: add shceduleComputeInjury here:
 
   if(flags->d_computeScaleFactor){
     scheduleComputeParticleScaleFactor(   sched, patches, matls);
@@ -3165,6 +3166,8 @@ void SerialMPM::computeStressTensor(const ProcessorGroup*,
 
   }
 }
+
+// JIAHAO: computeInjury here:
 
 
 //______________________________________________________________________
