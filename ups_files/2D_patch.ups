@@ -47,8 +47,8 @@
        <Level>
            <Box label = "1">
               <lower>[0,0,0]</lower>
-              <upper>[15,15,15]</upper>
-              <resolution>[15,10,1]</resolution>
+              <upper>[8,8,8]</upper>
+              <resolution>[8,8,8]</resolution>
               <extraCells>[0,0,0]</extraCells>
               <patches>[1,1,1]</patches>
            </Box>
@@ -105,11 +105,11 @@
               <specific_heat>5</specific_heat>
               <geom_object>
                   <box label = "a_box">
-                     <min>[0,0,0]</min>
-                     <max>[5,5,5]</max>
+                     <min>[3,3,3]</min>
+                     <max>[4,4,4]</max>
                   </box>
-                  <res>[2,2,2]</res>
-                  <velocity>[0.1,0.1,0.0]</velocity>
+                  <res>[4,1,1]</res>
+                  <velocity>[0,0,0.0]</velocity>
                   <temperature>12</temperature>
                   <color> 0 </color>
                </geom_object>

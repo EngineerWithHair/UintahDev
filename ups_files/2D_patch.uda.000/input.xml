@@ -43,8 +43,8 @@
     <Level>
       <Box label="1">
         <lower>[0,0,0]</lower>
-        <upper>[15,15,15]</upper>
-        <resolution>[15,10,1]</resolution>
+        <upper>[8,8,8]</upper>
+        <resolution>[8,8,8]</resolution>
         <extraCells>[0,0,0]</extraCells>
         <patches>[1,1,1]</patches>
       </Box>

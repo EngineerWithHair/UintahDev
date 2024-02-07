@@ -7,26 +7,26 @@
   </Meta>
   <Time>
     <timestepNumber>52</timestepNumber>
-    <currentTime>4.6714750503272828</currentTime>
-    <oldDelt>0.086827398348389984</oldDelt>
+    <currentTime>5.2789870427970076</currentTime>
+    <oldDelt>0.092719006471964668</oldDelt>
   </Time>
   <Grid>
     <numLevels>1</numLevels>
     <Level>
       <numPatches>1</numPatches>
-      <totalCells>150</totalCells>
+      <totalCells>512</totalCells>
       <anchor>[0, 0, 0]</anchor>
       <id>0</id>
-      <cellspacing>[1, 1.5, 15]</cellspacing>
+      <cellspacing>[1, 1, 1]</cellspacing>
       <Patch>
         <id>0</id>
         <proc>0</proc>
         <lowIndex>[0, 0, 0]</lowIndex>
-        <highIndex>[15, 10, 1]</highIndex>
-        <nnodes>352</nnodes>
+        <highIndex>[8, 8, 8]</highIndex>
+        <nnodes>729</nnodes>
         <lower>[0, 0, 0]</lower>
-        <upper>[15, 15, 15]</upper>
-        <totalCells>150</totalCells>
+        <upper>[8, 8, 8]</upper>
+        <totalCells>512</totalCells>
       </Patch>
     </Level>
   </Grid>
@@ -87,7 +87,7 @@
     <extra_solver_flushes>0</extra_solver_flushes>
     <boundary_traction_faces>[]</boundary_traction_faces>
     <do_scalar_diffusion>false</do_scalar_diffusion>
-    <d_ndim>2</d_ndim>
+    <d_ndim>3</d_ndim>
   </MPM>
   <MaterialProperties>
     <MPM>
@@ -115,8 +115,8 @@
         <damage_model type="null"/>
         <geom_object>
           <box label="a_box">
-            <min>[0, 0, 0]</min>
-            <max>[5, 5, 5]</max>
+            <min>[3, 3, 3]</min>
+            <max>[4, 4, 4]</max>
           </box>
           <color>0</color>
           <temperature>12</temperature>
@@ -124,8 +124,8 @@
           <affineTransformation_A1>[0, 1, 0]</affineTransformation_A1>
           <affineTransformation_A2>[0, 0, 1]</affineTransformation_A2>
           <affineTransformation_b>[0, 0, 0]</affineTransformation_b>
-          <velocity>[0.10000000000000001, 0.10000000000000001, 0]</velocity>
-          <res>[2, 2, 2]</res>
+          <velocity>[0, 0, 0]</velocity>
+          <res>[4, 1, 1]</res>
         </geom_object>
       </material>
       <contact>
