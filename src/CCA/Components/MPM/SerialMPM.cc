@@ -425,7 +425,7 @@ void SerialMPM::scheduleInitialize(const LevelP& level,
   t->computes(lb->pParticleIDLabel);
   t->computes(lb->pDeformationMeasureLabel);
   t->computes(lb->pStressLabel);
-  // JIAHAO: add here lb->injury
+  // JIAHAO: add here lb->injury Saving Not solved yet
   t->computes(lb->pInjuryLabel);
   t->computes(lb->pVelGradLabel);
   t->computes(lb->pTemperatureGradientLabel);
