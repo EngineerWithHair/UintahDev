@@ -824,57 +824,29 @@ std::cout<<"*************"<<std::endl;
 
     // Particle and grid data universal to model type
     // Old data containers
-    constParticleVariable<double>  pMass, pVolume_new, pJThermal;
-    constParticleVariable<double>  pPlasticStrain_old, pYieldStress_old;
-    constParticleVariable<long64>  pParticleID;
-    constParticleVariable<Vector>  pVelocity;
-    constParticleVariable<Matrix3> velGrad;
-    constParticleVariable<Matrix3> pDefGrad, bElBar;
+    constParticleVariable<Matrix3> pDefGrad;
     constParticleVariable<Matrix3> pDefGrad_new;
-    constParticleVariable<int>     pLocalizedOld;
     // New data containers
-    ParticleVariable<double>       pPlasticStrain, pYieldStress;
-
-    ParticleVariable<double>       pdTdt,p_q;
-    ParticleVariable<Matrix3>      pStress,bElBar_new;
+    ParticleVariable<double>       pInjury;
 
 
     // Universal Gets
-    old_dw->get(pMass,               lb->pMassLabel,               pset);
-    old_dw->get(pVelocity,           lb->pVelocityLabel,           pset);
-    old_dw->get(pDefGrad,            lb->pDeformationMeasureLabel, pset);
-    old_dw->get(pLocalizedOld,       d_lb->pLocalizedMPMLabel,     pset);
-    new_dw->get(velGrad,             lb->pVelGradLabel_preReloc,   pset);
-    new_dw->get(pVolume_new,         lb->pVolumeLabel_preReloc,    pset);
-    new_dw->get(pDefGrad_new,lb->pDeformationMeasureLabel_preReloc,pset);
-    new_dw->get(pJThermal,           lb->pJThermalLabel,           pset);
 
+    old_dw->get(pDefGrad,            lb->pDeformationMeasureLabel, pset);
+    new_dw->get(pDefGrad_new,lb->pDeformationMeasureLabel_preReloc,pset);
+
+   
     // Universal Allocations
-    new_dw->allocateAndPut(pStress,     lb->pStressLabel_preReloc, pset);
-    new_dw->allocateAndPut(pdTdt,       lb->pdTdtLabel,            pset);
-    new_dw->allocateAndPut(p_q,         lb->p_qLabel_preReloc,     pset);
+    new_dw->allocateAndPut(pInjury,  lb->pInjuryLabel,             pset);
 
     ParticleSubset::iterator iter = pset->begin();
     for(; iter != pset->end(); iter++){
       particleIndex idx = *iter;
-      // Assign zero internal heating by default - modify if necessary.
-      pdTdt[idx] = 0.0;
-
+      std::cout<<"pDefGrad is:"<<pDefGrad[idx]<<std::endl;
+      std::cout<<"pDefGrad_new is:"<<pDefGrad_new[idx]<<std::endl;
       Matrix3 pDefGradInc = pDefGrad_new[idx]*pDefGrad[idx].Inverse();
-      double Jinc         = pDefGradInc.Determinant();
-
-      // 1) Get the volumetric part of the deformation
-      // 2) Compute the deformed volume and new density
-      double J        = pDefGrad_new[idx].Determinant();
-
-      // Get the volume preserving part of the deformation gradient increment
-      Matrix3 fBar = pDefGradInc/cbrt(Jinc);
-
-      // Compute the trial elastic part of the volume preserving
-      // part of the left Cauchy-Green deformation tensor
-      Matrix3 bElBarTrial, tauDev;
-      // Check for plastic loading
-      double alpha;
+      std::cout<<"pDefGradInc:"<<pDefGradInc<<std::endl;
+      
 
     } // end loop over particles
 

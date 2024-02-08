@@ -8,10 +8,10 @@
    <SimulationComponent type="mpm" />
 
    <Time>
-       <maxTime>6.0</maxTime>
+       <maxTime>5.0</maxTime>
        <initTime>0.0</initTime>
-       <delt_min>0.001</delt_min>
-       <delt_max>2</delt_max>
+       <delt_min>0.5</delt_min>
+       <delt_max>0.5</delt_max>
        <timestep_multiplier>0.2</timestep_multiplier>
    </Time>
 
@@ -69,7 +69,7 @@
        <save label = "p.volume"/>
        <save label = "p.velocity"/>
        <save label = "p.stress"/>
-       <!--<save label = "p.injury"/>-->
+       <save label = "p.injury"/>
        <save label = "g.mass"/>
        <save label = "g.stressFS"/>
        <checkpoint cycle = "2" interval = "0.01"/>

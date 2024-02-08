@@ -108,14 +108,17 @@ ConstitutiveModel::initSharedDataForExplicit(const Patch* patch,
 {
   Matrix3 I; I.Identity();
   Matrix3 zero(0.);
+  //JIAHAO
   ParticleSubset* pset = new_dw->getParticleSubset(matl->getDWIndex(), patch);
 
   ParticleVariable<double>  pdTdt;
   ParticleVariable<Matrix3> pDefGrad, pStress;
+  ParticleVariable<double>  pInjury;
 
   new_dw->allocateAndPut(pdTdt,       lb->pdTdtLabel,               pset);
   new_dw->allocateAndPut(pDefGrad,    lb->pDeformationMeasureLabel, pset);
   new_dw->allocateAndPut(pStress,     lb->pStressLabel,             pset);
+  new_dw->allocateAndPut(pInjury,     lb->pInjuryLabel,             pset);
 
   // To fix : For a material that is initially stressed we need to
   // modify the stress tensors to comply with the initial stress state
@@ -125,6 +128,8 @@ ConstitutiveModel::initSharedDataForExplicit(const Patch* patch,
     pdTdt[idx] = 0.0;
     pDefGrad[idx] = I;
     pStress[idx] = zero;
+    pInjury[idx]=0.0; //JIAHAO
+    std::cout<<"injury of initialSharedData is:"<< pInjury[idx]<<std::endl;
   }
 }
 

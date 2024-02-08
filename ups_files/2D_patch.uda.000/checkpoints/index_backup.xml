@@ -5,31 +5,8 @@
   <outputFormat>UDA</outputFormat>
   <Meta>
     <username>jwei34</username>
-    <date>Wed Feb  7 11:45:57 2024</date>
+    <date>Thu Feb  8 00:05:35 2024</date>
     <endianness>little_endian</endianness>
     <nBits>64</nBits>
   </Meta>
-  <variables>
-    <variable type="NCVariable&lt;double&gt;" name="NC_CCweight" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;double&gt;" name="p.color" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.deformationMeasure" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;Vector&gt;" name="p.displacement" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;int&gt;" name="p.localizedMPM" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;double&gt;" name="p.mass" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;long64&gt;" name="p.particleID" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.size" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.stress" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;double&gt;" name="p.temperature" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;Vector&gt;" name="p.temperatureGradient" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;Vector&gt;" name="p.velocity" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;double&gt;" name="p.volume" numMaterials="1"/>
-    <variable type="ParticleVariable&lt;Point&gt;" name="p.x" numMaterials="1"/>
-  </variables>
-  <globals>
-    <variable type="ReductionVariable&lt;double&gt;" name="delT" numMaterials="1"/>
-  </globals>
-  <timesteps>
-    <timestep href="t00058/timestep.xml" time="5.8353010816287973" oldDelt="0.092719006471964668">58</timestep>
-    <timestep href="t00059/timestep.xml" time="5.9280200881007623" oldDelt="0.092719006471964668">59</timestep>
-  </timesteps>
 </Uintah_DataArchive>

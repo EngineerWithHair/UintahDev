@@ -569,6 +569,8 @@ MPMLabel::~MPMLabel()
   VarLabel::destroy(pVelGradLabel_preReloc);
   VarLabel::destroy(pStressLabel);
   VarLabel::destroy(pStressLabel_preReloc);
+  VarLabel::destroy(pInjuryLabel); //JIAHAO injury
+  VarLabel::destroy(pInjuryLabel_preReloc);
   VarLabel::destroy(pVolumeLabel);
   VarLabel::destroy(pVolumeLabel_preReloc);
   VarLabel::destroy(pMassLabel);

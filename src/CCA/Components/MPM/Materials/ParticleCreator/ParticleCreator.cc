@@ -930,6 +930,11 @@ void ParticleCreator::registerPermanentParticleState(MPMMaterial* matl)
   particle_state.push_back(d_lb->pStressLabel);
   particle_state_preReloc.push_back(d_lb->pStressLabel_preReloc);
 
+  //JIAHAO: push_back injury label
+  /*particle_state.push_back(d_lb->pInjuryLabel);*/
+  /*particle_state.push_back(d_lb->pInjuryLabel_preReloc);*/
+  std::cout<<"The program executes at ParticelCreator.cc and push_back pInjuryLabel"<<std::endl;
+
   particle_state.push_back(d_lb->pLocalizedMPMLabel);
   particle_state_preReloc.push_back(d_lb->pLocalizedMPMLabel_preReloc);
 

@@ -345,6 +345,9 @@ Relocate::scheduleParticleRelocation( Scheduler                                 
   ASSERTEQ(numMatls, matlsub->size());
 
   for (int m = 0; m< numMatls; m++){
+    //JIAHAO prints: why do I need to assert here??
+    std::cout<<"m_reloc_old_labels[m][0] is:"<<m_reloc_old_labels[m][0]->getName()<<std::endl;
+    std::cout<<"m_reloc_new_labels[m][0] is:"<<m_reloc_new_labels[m][0]->getName()<<std::endl;
     ASSERTEQ(m_reloc_old_labels[m].size(), m_reloc_new_labels[m].size());
   }
   Task* t = scinew Task("Relocate::relocateParticles",
