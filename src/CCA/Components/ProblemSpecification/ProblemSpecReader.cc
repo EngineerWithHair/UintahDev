@@ -45,9 +45,9 @@
 #include <cstring>
 #include <unistd.h>
 
-#include <libxml/tree.h>
-#include <libxml/parser.h>
-#include <libxml/xmlstring.h>
+#include </usr/include/libxml2/libxml/tree.h>
+#include </usr/include/libxml2/libxml/parser.h>
+#include </usr/include/libxml2/libxml/xmlstring.h>
 
 using namespace Uintah;
 

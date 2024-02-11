@@ -836,8 +836,8 @@ std::cout<<"*************"<<std::endl;
     new_dw->get(pDefGrad_new,lb->pDeformationMeasureLabel_preReloc,pset);
 
    
-    // Universal Allocations
-    new_dw->allocateAndPut(pInjury,  lb->pInjuryLabel,             pset);
+    // JIAHAO: injury Allocations
+    // new_dw->allocateAndPut(pInjury,  lb->pInjuryLabel,             pset);
 
     ParticleSubset::iterator iter = pset->begin();
     for(; iter != pset->end(); iter++){
