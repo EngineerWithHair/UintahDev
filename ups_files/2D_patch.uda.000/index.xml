@@ -5,7 +5,7 @@
   <outputFormat>UDA</outputFormat>
   <Meta>
     <username>jwei34</username>
-    <date>Sun Feb 11 14:32:32 2024</date>
+    <date>Sun Feb 11 15:25:25 2024</date>
     <endianness>little_endian</endianness>
     <nBits>64</nBits>
   </Meta>
@@ -23,6 +23,7 @@
     <variable type="ParticleVariable&lt;double&gt;" name="p.volume" numMaterials="1"/>
     <variable type="ParticleVariable&lt;Vector&gt;" name="p.velocity" numMaterials="1"/>
     <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.stress" numMaterials="1"/>
+    <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.injury" numMaterials="1"/>
     <variable type="NCVariable&lt;double&gt;" name="g.mass" numMaterials="2"/>
     <variable type="NCVariable&lt;Matrix3&gt;" name="g.stressFS" numMaterials="2"/>
   </variables>

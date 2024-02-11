@@ -64,7 +64,7 @@
     <save label="p.volume"/>
     <save label="p.velocity"/>
     <save label="p.stress"/>
-    <!--<save label = "p.injury"/>-->
+    <save label="p.injury"/>
     <save label="g.mass"/>
     <save label="g.stressFS"/>
     <checkpoint cycle="2" interval="0.01"/>

@@ -835,9 +835,9 @@ std::cout<<"*************"<<std::endl;
     old_dw->get(pDefGrad,            lb->pDeformationMeasureLabel, pset);
     new_dw->get(pDefGrad_new,lb->pDeformationMeasureLabel_preReloc,pset);
 
-   
+    
     // JIAHAO: injury Allocations
-    // new_dw->allocateAndPut(pInjury,  lb->pInjuryLabel,             pset);
+    new_dw->allocateAndPut(pInjury,  lb->pInjuryLabel,             pset);
 
     ParticleSubset::iterator iter = pset->begin();
     for(; iter != pset->end(); iter++){
@@ -846,6 +846,7 @@ std::cout<<"*************"<<std::endl;
       std::cout<<"pDefGrad_new is:"<<pDefGrad_new[idx]<<std::endl;
       Matrix3 pDefGradInc = pDefGrad_new[idx]*pDefGrad[idx].Inverse();
       std::cout<<"pDefGradInc:"<<pDefGradInc<<std::endl;
+      pInjury[idx]=5.20;
       
 
     } // end loop over particles

@@ -1185,6 +1185,7 @@ void SerialMPM::scheduleComputeStressTensor(SchedulerP& sched,
     const MaterialSubset* matlset = mpm_matl->thisMaterial();
 
     ConstitutiveModel* cm = mpm_matl->getConstitutiveModel();
+    //JIAHAO: comment out this line and see what will happen.
     cm->addComputesAndRequires(t, mpm_matl, patches);
 
     t->computes(lb->p_qLabel_preReloc, matlset);
@@ -1233,6 +1234,9 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
 
     t->computes(lb->p_qLabel_preReloc, matlset);
   }*/
+
+  // JIAHAO: I think it should be reduction type. Let's figure it out later
+  t->computes(lb->pInjuryLabel);
 
   sched->addTask(t, patches, matls);
   std::cout<<"*************"<<std::endl;

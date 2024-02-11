@@ -63,7 +63,10 @@ Uintah::printParticleVariable( DataArchive      * da,
   vector<double> times;
   da->queryTimesteps(index, times);
   ASSERTEQ(index.size(), times.size());
-  //cout << "There are " << index.size() << " timesteps:\n";
+  
+  // JIAHAO:
+  std::cout << "In printParticleVariable fcuntion at printParticalVar.cc"
+  <<"There are "<< index.size() << " timesteps:\n"<<std::endl;
 
 
   findTimestep_loopLimits( clf.tslow_set, clf.tsup_set, times, clf.time_step_lower, clf.time_step_upper);

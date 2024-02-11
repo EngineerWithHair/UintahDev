@@ -1,0 +1,3 @@
+Before Entering printParticalVariable function
+In printParticleVariable fcuntion at printParticalVar.ccThere are 10 timesteps:
+
