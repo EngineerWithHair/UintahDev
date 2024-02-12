@@ -373,7 +373,9 @@ main( int argc, char *argv[] )
       vector<int> num_matls;
       vector<const Uintah::TypeDescription*> types;
       da->queryVariables( vars, num_matls, types );
-      std::cout<<"**********"<<std::endl;
+
+      //JIAHAO for debug use:
+      //std::cout<<"**********"<<std::endl;
       cout << "There are " << vars.size() << " variables:\n";
       for( int i = 0; i < (int)vars.size(); i++ ){
         cout << vars[i] << ": " << types[i]->getName() << "\n";
@@ -385,7 +387,9 @@ main( int argc, char *argv[] )
     if( clf.do_gridstats ){
       gridstats( da, clf );
     }
-    
+
+    // JIAHAO for debug use:
+    // std::cout<<"clf.do_partvar is: "<<clf.do_partvar<<std::endl;
     if ( clf.do_partvar && !clf.do_POL ) {
       std::cout<<"Before Entering printParticalVariable function"<<std::endl;
       printParticleVariable( da, clf, material_of_interest );

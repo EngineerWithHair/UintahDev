@@ -54,7 +54,7 @@
     <end>5408</end>
     <filename>p00000.data</filename>
   </Variable>
-  <Variable type="ParticleVariable&lt;Matrix3&gt;">
+  <Variable type="ParticleVariable&lt;double&gt;">
     <variable>p.injury</variable>
     <index>0</index>
     <patch>0</patch>

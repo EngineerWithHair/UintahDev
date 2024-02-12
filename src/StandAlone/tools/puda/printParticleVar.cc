@@ -65,8 +65,8 @@ Uintah::printParticleVariable( DataArchive      * da,
   ASSERTEQ(index.size(), times.size());
   
   // JIAHAO:
-  std::cout << "In printParticleVariable fcuntion at printParticalVar.cc"
-  <<"There are "<< index.size() << " timesteps:\n"<<std::endl;
+  /*std::cout << "In printParticleVariable function at printParticalVar.cc "
+  <<"There are "<< index.size() << " timesteps:\n"<<std::endl;*/
 
 
   findTimestep_loopLimits( clf.tslow_set, clf.tsup_set, times, clf.time_step_lower, clf.time_step_upper);
@@ -93,8 +93,15 @@ Uintah::printParticleVariable( DataArchive      * da,
         // Loop thru all the variables
         for(int v=0;v<(int)vars.size();v++){
           std::string var = vars[v];
+
+          //JIAHAO for debug use:
+          //std::cout<<"The current variable is: "<<var<<std::endl;
+
           const Uintah::TypeDescription* td = types[v];
           const Uintah::TypeDescription* subtype = td->getSubType();
+
+          // JIAHAO for debug use:
+          // std::cout<<"The current variableType is: "<<subtype->getName()<<std::endl;
 
           // Check if the variable is a ParticleVariable
           if(td->getType() == Uintah::TypeDescription::ParticleVariable) {

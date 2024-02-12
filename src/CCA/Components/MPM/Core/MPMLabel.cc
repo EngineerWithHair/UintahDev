@@ -111,9 +111,9 @@ MPMLabel::MPMLabel()
                         
   //JIAHAO: create injury label and injury preReloc label
   pInjuryLabel = VarLabel::create( "p.injury",
-                        ParticleVariable<Matrix3>::getTypeDescription() );
+                        ParticleVariable<double>::getTypeDescription() );
   pInjuryLabel_preReloc = VarLabel::create( "p.injury+",
-                        ParticleVariable<Matrix3>::getTypeDescription() );
+                        ParticleVariable<double>::getTypeDescription() );
   
   pVolumeLabel = VarLabel::create( "p.volume",
                         ParticleVariable<double>::getTypeDescription());
