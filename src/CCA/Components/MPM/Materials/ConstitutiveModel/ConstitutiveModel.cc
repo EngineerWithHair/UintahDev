@@ -128,8 +128,10 @@ ConstitutiveModel::initSharedDataForExplicit(const Patch* patch,
     pdTdt[idx] = 0.0;
     pDefGrad[idx] = I;
     pStress[idx] = zero;
-    pInjury[idx]=0.0; //JIAHAO
-    std::cout<<"injury of initialSharedData is:"<< pInjury[idx]<<std::endl;
+    pInjury[idx]=0.0; 
+    
+    //JIAHAO: initialize injuries of all material points as double 0.0
+    // std::cout<<"injury of initialSharedData is:"<< pInjury[idx]<<std::endl;
   }
 }
 

@@ -804,10 +804,12 @@ void UCNH::computeInjury(const PatchSubset* patches,
                                 DataWarehouse* old_dw,
                                 DataWarehouse* new_dw){
 
-std::cout<<"*************"<<std::endl;
+// JIAHAO: comments for debugging purpose: testing where 
+// sus utility has been executed
+/*std::cout<<"*************"<<std::endl;
 std::cout<<"UCNH: compute injury"<<std::endl;
 std::cout<<"*************"<<std::endl;
-
+*/
 
   Ghost::GhostType  gan = Ghost::AroundNodes;
 
@@ -842,11 +844,15 @@ std::cout<<"*************"<<std::endl;
     ParticleSubset::iterator iter = pset->begin();
     for(; iter != pset->end(); iter++){
       particleIndex idx = *iter;
-      std::cout<<"pDefGrad is:"<<pDefGrad[idx]<<std::endl;
+      // JIAHAO: print commands for pre-injury computation
+      /*std::cout<<"pDefGrad is:"<<pDefGrad[idx]<<std::endl;
       std::cout<<"pDefGrad_new is:"<<pDefGrad_new[idx]<<std::endl;
       Matrix3 pDefGradInc = pDefGrad_new[idx]*pDefGrad[idx].Inverse();
-      std::cout<<"pDefGradInc:"<<pDefGradInc<<std::endl;
-      pInjury[idx]=5.20;
+      std::cout<<"pDefGradInc:"<<pDefGradInc<<std::endl;*/
+
+      double e1(0.0),e2(0.0),e3(0.0);
+      int numEigenvalues=pDefGrad_new[idx].getEigenValues(e1,e2,e3);
+      pInjury[idx]=std::max(std::max(e1,e2),e3);
       
 
     } // end loop over particles

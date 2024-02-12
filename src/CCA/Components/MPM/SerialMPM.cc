@@ -1224,7 +1224,7 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
   Task* t = scinew Task("MPM::computeStressTensor",
                         this, &SerialMPM::computeInjury);
 
-  // JIAHAO: I probably don't need this
+  // JIAHAO: I probably don't need this -> Update 02/12/2024 almost positive I don't need this
   /*for(unsigned int m = 0; m < numMatls; m++){
     MPMMaterial* mpm_matl = (MPMMaterial*) m_materialManager->getMaterial( "MPM", m);
     const MaterialSubset* matlset = mpm_matl->thisMaterial();
@@ -1235,13 +1235,16 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
     t->computes(lb->p_qLabel_preReloc, matlset);
   }*/
 
-  // JIAHAO: I think it should be reduction type. Let's figure it out later
+  // JIAHAO: I think it should be reduction type. Let's figure it out later ->
+  // update 02/12/2024 I didn't define reduction type. sus utility still runs
   t->computes(lb->pInjuryLabel);
 
   sched->addTask(t, patches, matls);
-  std::cout<<"*************"<<std::endl;
+
+  // JIAHAO: for debug purpose testing where the program has been execuated
+  /*std::cout<<"*************"<<std::endl;
   std::cout<<"Task t created and added to sched for computing injury"<<std::endl;
-  std::cout<<"*************"<<std::endl;
+  std::cout<<"*************"<<std::endl;*/
 }
 
 
@@ -3220,13 +3223,14 @@ void SerialMPM::computeInjury(const ProcessorGroup*,
     MPMMaterial* mpm_matl = (MPMMaterial*) m_materialManager->getMaterial( "MPM", m);
     ConstitutiveModel* cm = mpm_matl->getConstitutiveModel();
     cm->setWorld(d_myworld);
-    std::cout<<"*************"<<std::endl;
-    std::cout<<"cm->setWorld"<<std::endl;
-    std::cout<<"*************"<<std::endl;
+    // JIAHAO: comments for debugging purposes 
+    //std::cout<<"*************"<<std::endl;
+    //std::cout<<"cm->setWorld"<<std::endl;
+    //std::cout<<"*************"<<std::endl;
     cm->computeInjury(patches, mpm_matl, old_dw, new_dw);
-    std::cout<<"*************"<<std::endl;
-    std::cout<<"cm->computeInjury"<<std::endl;
-    std::cout<<"*************"<<std::endl;
+    //std::cout<<"*************"<<std::endl;
+    //std::cout<<"cm->computeInjury"<<std::endl;
+    //std::cout<<"*************"<<std::endl;
   }
 }
 
