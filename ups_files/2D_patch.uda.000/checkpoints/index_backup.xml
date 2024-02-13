@@ -5,7 +5,7 @@
   <outputFormat>UDA</outputFormat>
   <Meta>
     <username>jwei34</username>
-    <date>Sun Feb 11 23:44:19 2024</date>
+    <date>Mon Feb 12 05:14:48 2024</date>
     <endianness>little_endian</endianness>
     <nBits>64</nBits>
   </Meta>
@@ -29,7 +29,7 @@
     <variable type="ReductionVariable&lt;double&gt;" name="delT" numMaterials="1"/>
   </globals>
   <timesteps>
-    <timestep href="t00008/timestep.xml" time="4" oldDelt="0.5">8</timestep>
-    <timestep href="t00009/timestep.xml" time="4.5" oldDelt="0.5">9</timestep>
+    <timestep href="t00047/timestep.xml" time="4.8153920104371828" oldDelt="0.092719006471964668">47</timestep>
+    <timestep href="t00048/timestep.xml" time="4.9081110169091478" oldDelt="0.092719006471964668">48</timestep>
   </timesteps>
 </Uintah_DataArchive>
