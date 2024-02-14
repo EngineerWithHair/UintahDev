@@ -113,6 +113,7 @@ ConstitutiveModel::initSharedDataForExplicit(const Patch* patch,
 
   ParticleVariable<double>  pdTdt;
   ParticleVariable<Matrix3> pDefGrad, pStress;
+  //JIAHAO: 
   ParticleVariable<double>  pInjury;
 
   new_dw->allocateAndPut(pdTdt,       lb->pdTdtLabel,               pset);
@@ -128,6 +129,7 @@ ConstitutiveModel::initSharedDataForExplicit(const Patch* patch,
     pdTdt[idx] = 0.0;
     pDefGrad[idx] = I;
     pStress[idx] = zero;
+    //JIAHAO:
     pInjury[idx]=0.0; 
     
     //JIAHAO: initialize injuries of all material points as double 0.0
@@ -183,6 +185,8 @@ ConstitutiveModel::addSharedCRForExplicit(Task* task,
   task->requires(Task::NewDW, lb->pVelGradLabel_preReloc,   matlset, gnone);
 
   task->computes(lb->pStressLabel_preReloc,             matlset);
+  //JIAHAO:
+  //task->computes(lb->pInjuryLabel_preReloc,             matlset);
   task->computes(lb->pdTdtLabel,                        matlset);
   //task->computes(lb->p_qLabel_preReloc,                 matlset);
 }

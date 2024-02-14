@@ -828,19 +828,28 @@ std::cout<<"*************"<<std::endl;
     // Old data containers
     constParticleVariable<Matrix3> pDefGrad;
     constParticleVariable<Matrix3> pDefGrad_new;
+    constParticleVariable<double>  pInjury;
+    std::cout<<"pInjury is created"<<std::endl;
     // New data containers
-    ParticleVariable<double>       pInjury;
-
+    ParticleVariable<double>       pInjury_new;
+    
+    
+    std::cout<<"pInjury_new is created"<<std::endl;
 
     // Universal Gets
 
     old_dw->get(pDefGrad,            lb->pDeformationMeasureLabel, pset);
-    //old_dw->get(pInjury,             lb->pInjuryLabel,             pset);
+    old_dw->get(pInjury,             lb->pInjuryLabel,             pset);
+    
+    std::cout<<"pInjury get from old_dw"<<std::endl;
+    
     new_dw->get(pDefGrad_new,lb->pDeformationMeasureLabel_preReloc,pset);
 
     
     // JIAHAO: injury Allocations
-    new_dw->allocateAndPut(pInjury,  lb->pInjuryLabel,             pset);
+    new_dw->allocateAndPut(pInjury_new, lb->pInjuryLabel_preReloc, pset);
+    
+    std::cout<<"pInjury_new allocated to pset"<<std::endl;
 
     ParticleSubset::iterator iter = pset->begin();
     for(; iter != pset->end(); iter++){
@@ -855,16 +864,15 @@ std::cout<<"*************"<<std::endl;
       double MPS(0.0);
       double threshold(1.5);
       
-      pInjury[idx]=0.0;
-
       //std::cout<<"pInjury before computation: "<<pInjury[idx]<<std::endl;
       int numEigenvalues=pDefGrad_new[idx].getEigenValues(e1,e2,e3);
       MPS=std::max(std::max(e1,e2),e3);
       if (MPS>=1.5){
-        pInjury[idx]=pInjury[idx]+std::abs(MPS-threshold)*0.5;
+        pInjury_new[idx]=pInjury[idx]+std::abs(MPS-threshold)*0.5;
         //std::cout<<"MPS: "<<MPS<<std::endl;
         //std::cout<<"MPS-threshold: "<<MPS-threshold<<std::endl;
-        std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;
+        std::cout<<"pInjury before computation: "<<pInjury[idx]<<std::endl;
+        std::cout<<"pInjury after computation: "<<pInjury_new[idx]<<std::endl;
       }
     } // end loop over particles
 

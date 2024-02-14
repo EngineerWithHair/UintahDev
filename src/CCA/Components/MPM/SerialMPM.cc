@@ -425,7 +425,7 @@ void SerialMPM::scheduleInitialize(const LevelP& level,
   t->computes(lb->pParticleIDLabel);
   t->computes(lb->pDeformationMeasureLabel);
   t->computes(lb->pStressLabel);
-  // JIAHAO: add here lb->injury Saving Not solved yet
+  // JIAHAO: injury
   t->computes(lb->pInjuryLabel);
   t->computes(lb->pVelGradLabel);
   t->computes(lb->pTemperatureGradientLabel);
@@ -1238,6 +1238,7 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
   // JIAHAO: I think it should be reduction type. Let's figure it out later ->
   // update 02/12/2024 I didn't define reduction type. sus utility still runs
   t->computes(lb->pInjuryLabel);
+  // t->computes(lb->pInjuryLabel_preReloc);
 
   sched->addTask(t, patches, matls);
 
