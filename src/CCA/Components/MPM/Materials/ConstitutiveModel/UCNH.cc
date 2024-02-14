@@ -835,6 +835,7 @@ std::cout<<"*************"<<std::endl;
     // Universal Gets
 
     old_dw->get(pDefGrad,            lb->pDeformationMeasureLabel, pset);
+    //old_dw->get(pInjury,             lb->pInjuryLabel,             pset);
     new_dw->get(pDefGrad_new,lb->pDeformationMeasureLabel_preReloc,pset);
 
     
@@ -853,16 +854,17 @@ std::cout<<"*************"<<std::endl;
       double e1(0.0),e2(0.0),e3(0.0);
       double MPS(0.0);
       double threshold(1.5);
+      
       pInjury[idx]=0.0;
 
       //std::cout<<"pInjury before computation: "<<pInjury[idx]<<std::endl;
       int numEigenvalues=pDefGrad_new[idx].getEigenValues(e1,e2,e3);
       MPS=std::max(std::max(e1,e2),e3);
       if (MPS>=1.5){
-        pInjury[idx]=pInjury[idx]+(MPS-threshold)*0.5;
-        /*std::cout<<"MPS: "<<MPS<<std::endl;
-        std::cout<<"MPS-threshold: "<<MPS-threshold<<std::endl;
-        std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;*/
+        pInjury[idx]=pInjury[idx]+std::abs(MPS-threshold)*0.5;
+        //std::cout<<"MPS: "<<MPS<<std::endl;
+        //std::cout<<"MPS-threshold: "<<MPS-threshold<<std::endl;
+        std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;
       }
     } // end loop over particles
 
