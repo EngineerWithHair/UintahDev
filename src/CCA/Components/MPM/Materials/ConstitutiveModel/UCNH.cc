@@ -828,10 +828,10 @@ std::cout<<"*************"<<std::endl;
     // Old data containers
     constParticleVariable<Matrix3> pDefGrad;
     constParticleVariable<Matrix3> pDefGrad_new;
-    ParticleVariable<double>  pInjury;
+    constParticleVariable<double>  pInjury;
     //std::cout<<"pInjury is created"<<std::endl;
     // New data containers
-    //ParticleVariable<double>       pInjury_new;
+    ParticleVariable<double>       pInjury_new;
     
     
     //std::cout<<"pInjury_new is created"<<std::endl;
@@ -839,11 +839,12 @@ std::cout<<"*************"<<std::endl;
     // Universal Gets
 
     old_dw->get(pDefGrad,            lb->pDeformationMeasureLabel, pset);
+    old_dw->get(pInjury,             lb->pInjuryLabel             ,pset);
     new_dw->get(pDefGrad_new,lb->pDeformationMeasureLabel_preReloc,pset);
 
     
     // JIAHAO: injury Allocations
-    new_dw->allocateAndPut(pInjury, lb->pInjuryLabel, pset);
+    new_dw->allocateAndPut(pInjury_new, lb->pInjuryLabel, pset);
     
     std::cout<<"pInjury_new allocated to pset"<<std::endl;
 
@@ -851,24 +852,31 @@ std::cout<<"*************"<<std::endl;
     for(; iter != pset->end(); iter++){
       particleIndex idx = *iter;
       // JIAHAO: print commands for pre-injury computation
-      /*std::cout<<"pDefGrad is:"<<pDefGrad[idx]<<std::endl;
-      std::cout<<"pDefGrad_new is:"<<pDefGrad_new[idx]<<std::endl;
-      Matrix3 pDefGradInc = pDefGrad_new[idx]*pDefGrad[idx].Inverse();
-      std::cout<<"pDefGradInc:"<<pDefGradInc<<std::endl;*/
+      //std::cout<<"********************"<<std::endl;
+      //std::cout<<"pDefGrad is:"<<pDefGrad[idx]<<std::endl;
+      //std::cout<<"pDefGrad_new is:"<<pDefGrad_new[idx]<<std::endl;
+      //Matrix3 pDefGradInc = pDefGrad_new[idx]*pDefGrad[idx].Inverse();
+      //std::cout<<"pDefGradInc:"<<pDefGradInc<<std::endl;
+      //std::cout<<"********************"<<std::endl;
 
-      double e1(0.0),e2(0.0),e3(0.0);
-      double MPS(0.0);
+      double old_e1(0.0),old_e2(0.0),old_e3(0.0);
+      double new_e1(0.0),new_e2(0.0),new_e3(0.0);
+      double old_MPS(0.0), new_MPS(0.0);
       double threshold(1.5);
-      pInjury[idx]=0.0;
 
       //std::cout<<"pInjury before computation: "<<pInjury[idx]<<std::endl;
-      int numEigenvalues=pDefGrad_new[idx].getEigenValues(e1,e2,e3);
-      MPS=std::max(std::max(e1,e2),e3);
-      if (MPS>=1.5){
-        pInjury[idx]=pInjury[idx]+(MPS-threshold)*0.5;
+      int numEigenvalues_old=pDefGrad[idx].getEigenValues(old_e1,old_e2,old_e3);
+      int numEigenvalues_new=pDefGrad_new[idx].getEigenValues(new_e1,new_e2,new_e3);
+      old_MPS=std::abs(std::max(std::max(old_e1,old_e2),old_e3));
+      new_MPS=std::abs(std::max(std::max(new_e1,new_e2),new_e3));
+
+      if (new_MPS>threshold){
+        pInjury_new[idx]=pInjury[idx]+std::abs(new_MPS-old_MPS)*0.5;
         /*std::cout<<"MPS: "<<MPS<<std::endl;
         std::cout<<"MPS-threshold: "<<MPS-threshold<<std::endl;
         std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;*/
+      }else{
+        pInjury_new[idx]=pInjury[idx];
       }
     } // end loop over particles
 

@@ -1,4 +1,4 @@
 // Current git hash, date and branch.
-#define GIT_BRANCH " (HEAD -> master)"
-#define GIT_DATE   "Wed Feb 14 01:26:27 2024 -0500"
-#define GIT_HASH   "b7d1a127a56dc8729b854903988eeb6af97e5574"
+#define GIT_BRANCH " (HEAD -> master, Uintah_Dev/master)"
+#define GIT_DATE   "Wed Feb 14 01:42:55 2024 -0500"
+#define GIT_HASH   "a87f866ee60002d596235fcefd1b95e6f6aa43ae"

@@ -7,8 +7,8 @@
   </Meta>
   <Time>
     <timestepNumber>8</timestepNumber>
-    <currentTime>1.0474458731327638</currentTime>
-    <oldDelt>0.13093073414159545</oldDelt>
+    <currentTime>2</currentTime>
+    <oldDelt>0.25</oldDelt>
   </Time>
   <Grid>
     <numLevels>1</numLevels>

@@ -5,7 +5,7 @@
   <outputFormat>UDA</outputFormat>
   <Meta>
     <username>jwei34</username>
-    <date>Wed Feb 14 01:39:34 2024</date>
+    <date>Wed Feb 14 20:34:12 2024</date>
     <endianness>little_endian</endianness>
     <nBits>64</nBits>
   </Meta>
@@ -14,6 +14,7 @@
     <variable type="ParticleVariable&lt;double&gt;" name="p.color" numMaterials="1"/>
     <variable type="ParticleVariable&lt;Matrix3&gt;" name="p.deformationMeasure" numMaterials="1"/>
     <variable type="ParticleVariable&lt;Vector&gt;" name="p.displacement" numMaterials="1"/>
+    <variable type="ParticleVariable&lt;double&gt;" name="p.injury" numMaterials="1"/>
     <variable type="ParticleVariable&lt;int&gt;" name="p.localizedMPM" numMaterials="1"/>
     <variable type="ParticleVariable&lt;double&gt;" name="p.mass" numMaterials="1"/>
     <variable type="ParticleVariable&lt;long64&gt;" name="p.particleID" numMaterials="1"/>
@@ -29,7 +30,7 @@
     <variable type="ReductionVariable&lt;double&gt;" name="delT" numMaterials="1"/>
   </globals>
   <timesteps>
-    <timestep href="t00048/timestep.xml" time="4.9081110169091478" oldDelt="0.092719006471964668">48</timestep>
-    <timestep href="t00049/timestep.xml" time="5.0008300233811127" oldDelt="0.092719006471964668">49</timestep>
+    <timestep href="t00019/timestep.xml" time="4.75" oldDelt="0.25">19</timestep>
+    <timestep href="t00020/timestep.xml" time="5" oldDelt="0.25">20</timestep>
   </timesteps>
 </Uintah_DataArchive>
