@@ -129,6 +129,11 @@ public:
   //////////
   // Insert Documentation Here:
   inline const T& operator[](particleIndex idx) const {
+    //JIAHAO: prints for debugg
+    std::cout<<"***********"<<std::endl;
+    std::cout<<"idx is: "<<idx<<std::endl;
+    std::cout<<"d_pdata size is: "<<d_pdata->size<<std::endl;
+    std::cout<<"***********"<<std::endl;
     ASSERTRANGE(idx, 0, (particleIndex)d_pdata->size);
     return d_pdata->data[idx];
   }

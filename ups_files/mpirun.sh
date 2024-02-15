@@ -1,0 +1,1 @@
+mpirun -np 2 sus -mpi 2D_patch.ups 

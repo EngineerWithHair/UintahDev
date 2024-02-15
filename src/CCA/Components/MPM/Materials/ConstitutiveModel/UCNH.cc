@@ -846,7 +846,7 @@ std::cout<<"*************"<<std::endl;
     // JIAHAO: injury Allocations
     new_dw->allocateAndPut(pInjury_new, lb->pInjuryLabel, pset);
     
-    std::cout<<"pInjury_new allocated to pset"<<std::endl;
+    //std::cout<<"pInjury_new allocated to pset"<<std::endl;
 
     ParticleSubset::iterator iter = pset->begin();
     for(; iter != pset->end(); iter++){
