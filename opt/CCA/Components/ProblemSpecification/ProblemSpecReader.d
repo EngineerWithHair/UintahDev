@@ -264,7 +264,7 @@ CCA/Components/ProblemSpecification/ProblemSpecReader.o: \
  /usr/include/libxml2/libxml/xmlexports.h \
  /usr/include/libxml2/libxml/xmlstring.h \
  /usr/include/libxml2/libxml/xmlregexp.h \
- /usr/include/libxml2/libxml/dict.h \
+ /usr/include/libxml2/libxml/tree.h /usr/include/libxml2/libxml/dict.h \
  /usr/include/libxml2/libxml/xmlmemory.h \
  /usr/include/libxml2/libxml/threads.h \
  /usr/include/libxml2/libxml/globals.h \
@@ -294,4 +294,6 @@ CCA/Components/ProblemSpecification/ProblemSpecReader.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX2.h \
- /usr/include/c++/11/stdlib.h /usr/include/libxml2/libxml/xlink.h
+ /usr/include/c++/11/stdlib.h /usr/include/libxml2/libxml/xlink.h \
+ /usr/include/libxml2/libxml/parser.h \
+ /usr/include/libxml2/libxml/xmlstring.h

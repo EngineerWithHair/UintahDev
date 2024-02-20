@@ -7,13 +7,13 @@
   </Meta>
   <Time>
     <timestepNumber>2</timestepNumber>
-    <currentTime>1</currentTime>
-    <oldDelt>0.5</oldDelt>
+    <currentTime>0.2618614682831909</currentTime>
+    <oldDelt>0.13093073414159545</oldDelt>
   </Time>
   <Grid>
     <numLevels>1</numLevels>
     <Level>
-      <numPatches>4</numPatches>
+      <numPatches>1</numPatches>
       <totalCells>512</totalCells>
       <anchor>[0, 0, 0]</anchor>
       <id>0</id>
@@ -22,41 +22,11 @@
         <id>0</id>
         <proc>0</proc>
         <lowIndex>[0, 0, 0]</lowIndex>
-        <highIndex>[2, 8, 8]</highIndex>
-        <nnodes>162</nnodes>
-        <lower>[0, 0, 0]</lower>
-        <upper>[2, 8, 8]</upper>
-        <totalCells>128</totalCells>
-      </Patch>
-      <Patch>
-        <id>1</id>
-        <proc>0</proc>
-        <lowIndex>[2, 0, 0]</lowIndex>
-        <highIndex>[4, 8, 8]</highIndex>
-        <nnodes>162</nnodes>
-        <lower>[2, 0, 0]</lower>
-        <upper>[4, 8, 8]</upper>
-        <totalCells>128</totalCells>
-      </Patch>
-      <Patch>
-        <id>2</id>
-        <proc>0</proc>
-        <lowIndex>[4, 0, 0]</lowIndex>
-        <highIndex>[6, 8, 8]</highIndex>
-        <nnodes>162</nnodes>
-        <lower>[4, 0, 0]</lower>
-        <upper>[6, 8, 8]</upper>
-        <totalCells>128</totalCells>
-      </Patch>
-      <Patch>
-        <id>3</id>
-        <proc>0</proc>
-        <lowIndex>[6, 0, 0]</lowIndex>
         <highIndex>[8, 8, 8]</highIndex>
-        <nnodes>243</nnodes>
-        <lower>[6, 0, 0]</lower>
+        <nnodes>729</nnodes>
+        <lower>[0, 0, 0]</lower>
         <upper>[8, 8, 8]</upper>
-        <totalCells>128</totalCells>
+        <totalCells>512</totalCells>
       </Patch>
     </Level>
   </Grid>
@@ -145,8 +115,8 @@
         <damage_model type="null"/>
         <geom_object>
           <box label="a_box">
-            <min>[3, 3, 3]</min>
-            <max>[4, 4, 4]</max>
+            <min>[2, 2, 2]</min>
+            <max>[3, 3, 3]</max>
           </box>
           <color>0</color>
           <temperature>12</temperature>

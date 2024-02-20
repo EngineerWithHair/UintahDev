@@ -612,7 +612,7 @@ void UCNH::computeStressTensor(const PatchSubset* patches,
   // Normal patch loop
   for(int pp=0;pp<patches->size();pp++){
     //JIAHAO: debug
-    std::cout<<"The number of patches in computeStressTensor is: "<<patches->size()<<std::endl;
+    //std::cout<<"The number of patches in computeStressTensor is: "<<patches->size()<<std::endl;
     const Patch* patch = patches->get(pp);
 
     // Temporary and "get" variables
@@ -826,8 +826,8 @@ std::cout<<"*************"<<std::endl;
   // Normal patch loop
   for(int pp=0;pp<patches->size();pp++){
     //JIAHAO: debug statements
-    std::cout<<"the current patch pp is: "<<pp<<std::endl;
-    std::cout<<"number of pathces is: "<<patches->size()<<std::endl;
+    //std::cout<<"the current patch pp is: "<<pp<<std::endl;
+    //std::cout<<"number of pathces is: "<<patches->size()<<std::endl;
     const Patch* patch = patches->get(pp);
 
     // Get particle info and patch info
@@ -866,7 +866,7 @@ std::cout<<"*************"<<std::endl;
       particleIndex idx = *iter;
 
       // JIAHAO:
-      std::cout<<"the current pID is: "<<idx<<std::endl;
+      //std::cout<<"the current pID is: "<<idx<<std::endl;
 
       double old_e1(0.0),old_e2(0.0),old_e3(0.0);
       double new_e1(0.0),new_e2(0.0),new_e3(0.0);
@@ -883,10 +883,10 @@ std::cout<<"*************"<<std::endl;
         pInjury_new[idx]=pInjury[idx]+std::abs(new_MPS-old_MPS)*0.5;
         /*std::cout<<"MPS: "<<MPS<<std::endl;
         std::cout<<"MPS-threshold: "<<MPS-threshold<<std::endl;*/
-        std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;
+        //std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;
       }else{
         pInjury_new[idx]=pInjury[idx];
-        std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;
+        //std::cout<<"pInjury after computation: "<<pInjury[idx]<<std::endl;
       }
     } // end loop over particles
 

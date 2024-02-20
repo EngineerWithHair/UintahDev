@@ -391,7 +391,8 @@ main( int argc, char *argv[] )
     // JIAHAO for debug use:
     // std::cout<<"clf.do_partvar is: "<<clf.do_partvar<<std::endl;
     if ( clf.do_partvar && !clf.do_POL ) {
-      std::cout<<"Before Entering printParticalVariable function"<<std::endl;
+      // JIAHAO: debug comment
+      //std::cout<<"Before Entering printParticalVariable function"<<std::endl;
       printParticleVariable( da, clf, material_of_interest );
     }
 

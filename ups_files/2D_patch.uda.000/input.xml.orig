@@ -3,18 +3,31 @@
   <Meta>
     <title>2D_patch</title>
   </Meta>
+  <!--<Scheduler type="DynamicMPI">
+        <small_messages> true </small_messages>
+        <taskReadyQueueAlg> MostMessages </taskReadyQueueAlg>
+        <VarTracker>
+        <start_time> 0.0 </start_time>
+        <end_time> 0.2 </end_time>
+        <start_index> [0,0,0] </start_index>
+        <end_index> [2,2,1] </end_index>
+        <var label="pInjury" dw="OldDW"/>
+        <locations before_comm="false" before_exec="true" after_exec="true"/>
+        <task name="Track Injury"/>
+        </VarTracker>
+    </Scheduler>-->
   <SimulationComponent type="mpm"/>
   <Time>
     <maxTime>3.5</maxTime>
     <initTime>0.0</initTime>
-    <delt_min>0.5</delt_min>
+    <delt_min>0.005</delt_min>
     <delt_max>0.5</delt_max>
     <timestep_multiplier>0.2</timestep_multiplier>
   </Time>
   <Grid>
     <BoundaryConditions>
       <Face side="x-">
-        <BCType id="all" var="Dirichlet" label="Velocity">
+        <BCType id="all" var="Dirichlet" label="Symmetric">
           <value> [0.0,0.0,0.0] </value>
         </BCType>
       </Face>
@@ -46,7 +59,7 @@
         <upper>[8,8,8]</upper>
         <resolution>[8,8,8]</resolution>
         <extraCells>[0,0,0]</extraCells>
-        <patches>[4,1,1]</patches>
+        <patches>[1,1,1]</patches>
       </Box>
     </Level>
   </Grid>
@@ -104,8 +117,8 @@
         <specific_heat>5</specific_heat>
         <geom_object>
           <box label="a_box">
-            <min>[3,3,3]</min>
-            <max>[4,4,4]</max>
+            <min>[2,2,2]</min>
+            <max>[3,3,3]</max>
           </box>
           <res>[4,1,1]</res>
           <velocity>[0,0,0.0]</velocity>

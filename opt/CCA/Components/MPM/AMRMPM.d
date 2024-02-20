@@ -398,4 +398,5 @@ CCA/Components/MPM/AMRMPM.o: ../src/CCA/Components/MPM/AMRMPM.cc \
  ../src/Core/Grid/Variables/PerPatchVars.h \
  ../src/Core/Grid/Variables/PerPatch.h ../src/CCA/Ports/Regridder.h \
  ../src/Core/GeometryPiece/GeometryObject.h ../src/Core/Grid/AMR.h \
- ../src/Core/Grid/AMR_CoarsenRefine.h /usr/include/c++/11/stdlib.h
+ ../src/Core/Grid/AMR_CoarsenRefine.h /usr/local/openmpi/include/mpi.h \
+ /usr/include/c++/11/stdlib.h
