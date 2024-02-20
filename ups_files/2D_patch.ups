@@ -8,7 +8,7 @@
    <SimulationComponent type="mpm" />
 
    <Time>
-       <maxTime>2.5</maxTime>
+       <maxTime>3.5</maxTime>
        <initTime>0.0</initTime>
        <delt_min>0.5</delt_min>
        <delt_max>0.5</delt_max>
@@ -50,7 +50,7 @@
               <upper>[8,8,8]</upper>
               <resolution>[8,8,8]</resolution>
               <extraCells>[0,0,0]</extraCells>
-              <patches>[2,1,1]</patches>
+              <patches>[4,1,1]</patches>
            </Box>
        </Level>
     </Grid>

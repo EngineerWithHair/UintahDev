@@ -1238,7 +1238,7 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
   // JIAHAO: I think it should be reduction type. Let's figure it out later ->
   // update 02/12/2024 I didn't define reduction type. sus utility still runs
   t->requires(Task::OldDW, lb->pDeformationMeasureLabel, Ghost::None);
-  t->requires(Task::OldDW, lb->pInjuryLabel, Ghost::None);
+  t->requires(Task::OldDW, lb->pInjuryLabel, Ghost::AroundNodes);
   t->computes(lb->pInjuryLabel);
   // t->computes(lb->pInjuryLabel_preReloc);
 
