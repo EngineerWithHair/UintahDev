@@ -1221,7 +1221,7 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
   printSchedule(patches,cout_doing,"MPM::scheduleComputeInjury");
 
   unsigned int numMatls = m_materialManager->getNumMatls( "MPM" );
-  Task* t = scinew Task("MPM::computeStressTensor",
+  Task* t = scinew Task("MPM::computeInjury",
                         this, &SerialMPM::computeInjury);
 
   // JIAHAO: I probably don't need this -> Update 02/12/2024 almost positive I don't need this
@@ -1232,7 +1232,7 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
     ConstitutiveModel* cm = mpm_matl->getConstitutiveModel();
     cm->addComputesAndRequires(t, mpm_matl, patches);
 
-    t->computes(lb->p_qLabel_preReloc, matlset);
+    //t->computes(lb->p_qLabel_preReloc, matlset);
   }*/
 
   // JIAHAO: I think it should be reduction type. Let's figure it out later ->

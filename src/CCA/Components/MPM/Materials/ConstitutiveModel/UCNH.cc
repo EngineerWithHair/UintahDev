@@ -258,6 +258,10 @@ void UCNH::initializeCMData(const Patch* patch,
       ParticleVariable<Matrix3> pStress;
       new_dw->getModifiable(pStress,     lb->pStressLabel,             pset);
 
+      // JIAHAO
+      ParticleVariable<double> pInjury;
+      new_dw->getModifiable(pInjury,     lb->pInjuryLabel,             pset);
+
       Matrix3 stressInitial(d_init_pressure,             0.0,             0.0,
                                         0.0, d_init_pressure,             0.0,
                                         0.0,             0.0, d_init_pressure);
@@ -268,11 +272,15 @@ void UCNH::initializeCMData(const Patch* patch,
                                      0.0, DefDiagonal,         0.0,
                                      0.0,         0.0, DefDiagonal);
 
+      // JIAHAO
+      double injuryInitial(0.0);
+
       for (ParticleSubset::iterator iter = pset->begin();
                                     iter != pset->end(); ++iter) {
         particleIndex idx = *iter;
         pDefGrad[idx] = defGradInitial;
         pStress[idx]  = stressInitial;
+        pInjury[idx]  = injuryInitial;
       }
     }
   }

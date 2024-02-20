@@ -133,6 +133,7 @@ public:
     //std::cout<<"***********"<<std::endl;
     //std::cout<<"idx is: "<<idx<<std::endl;
     //std::cout<<"d_pdata size is: "<<d_pdata->size<<std::endl;
+    //std::cout<<"d_pdata->data[idx] is: "<<d_pdata->data[idx]<<std::endl;
     //std::cout<<"***********"<<std::endl;
     ASSERTRANGE(idx, 0, (particleIndex)d_pdata->size);
     return d_pdata->data[idx];
