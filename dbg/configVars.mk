@@ -108,9 +108,9 @@ ZOLTAN_INCLUDE =
 ZOLTAN_LIBRARY =  
 
 # Boost
-HAVE_BOOST    := yes
+HAVE_BOOST    := no
 BOOST_INCLUDE := 
-BOOST_LIBRARY :=  -lboost_thread -lboost_serialization -lboost_system -lboost_program_options -lboost_filesystem -lboost_date_time
+BOOST_LIBRARY :=  
 
 # SpatialOps - Wasatch 3P
 HAVE_SPATIALOPS    := no
@@ -188,7 +188,7 @@ XALAN_PATH :=
 PERL := /usr/bin/perl
 SED := sed
 
-MAKE_PARALLELISM := 8
+MAKE_PARALLELISM := 2
 
 LARGESOS := no
 

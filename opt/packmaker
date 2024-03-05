@@ -31,8 +31,8 @@
 set srcloc=$1
 set pkg=$2
 
-echo "SCIRUN_SRCTOP = /home/jwei34/Uintah/src" > Makefile
-echo "SCIRUN_OBJTOP = /home/jwei34/Uintah/opt" >> Makefile
+echo "SCIRUN_SRCTOP = /home/jwei34/UintahDev/src" > Makefile
+echo "SCIRUN_OBJTOP = /home/jwei34/UintahDev/opt" >> Makefile
 echo 'SCIRUN_SCRIPTS = $(SCIRUN_SRCTOP)/scripts' >> Makefile
 echo "" >> Makefile
 echo "MYPKG     = $pkg" >> Makefile
@@ -41,5 +41,5 @@ echo "SRCTOP_ABS = $srcloc" >> Makefile
 echo "OBJTOP     = ./" >> Makefile
 echo 'OBJTOP_ABS = $(shell cd $(OBJTOP) ; pwd)' >> Makefile
 echo "" >> Makefile
-echo "include /home/jwei34/Uintah/opt/disjointPackageMakefile" >> Makefile
+echo "include /home/jwei34/UintahDev/opt/disjointPackageMakefile" >> Makefile
 echo "#this file is to define variables needed by the local package make" > localdefs.mk

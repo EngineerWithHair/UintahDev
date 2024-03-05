@@ -5,8 +5,8 @@
     <index>0</index>
     <patch>0</patch>
     <start>0</start>
-    <numParticles>4</numParticles>
-    <end>96</end>
+    <numParticles>2</numParticles>
+    <end>48</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="ParticleVariable&lt;Matrix3&gt;">
@@ -14,8 +14,8 @@
     <index>0</index>
     <patch>0</patch>
     <start>1024</start>
-    <numParticles>4</numParticles>
-    <end>1312</end>
+    <numParticles>2</numParticles>
+    <end>1168</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="ParticleVariable&lt;long64&gt;">
@@ -23,8 +23,8 @@
     <index>0</index>
     <patch>0</patch>
     <start>2048</start>
-    <numParticles>4</numParticles>
-    <end>2080</end>
+    <numParticles>2</numParticles>
+    <end>2064</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="ParticleVariable&lt;double&gt;">
@@ -32,8 +32,8 @@
     <index>0</index>
     <patch>0</patch>
     <start>3072</start>
-    <numParticles>4</numParticles>
-    <end>3104</end>
+    <numParticles>2</numParticles>
+    <end>3088</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="ParticleVariable&lt;Vector&gt;">
@@ -41,8 +41,8 @@
     <index>0</index>
     <patch>0</patch>
     <start>4096</start>
-    <numParticles>4</numParticles>
-    <end>4192</end>
+    <numParticles>2</numParticles>
+    <end>4144</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="ParticleVariable&lt;Matrix3&gt;">
@@ -50,8 +50,8 @@
     <index>0</index>
     <patch>0</patch>
     <start>5120</start>
-    <numParticles>4</numParticles>
-    <end>5408</end>
+    <numParticles>2</numParticles>
+    <end>5264</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="ParticleVariable&lt;double&gt;">
@@ -59,8 +59,8 @@
     <index>0</index>
     <patch>0</patch>
     <start>6144</start>
-    <numParticles>4</numParticles>
-    <end>6176</end>
+    <numParticles>2</numParticles>
+    <end>6160</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="NCVariable&lt;double&gt;">
@@ -68,31 +68,31 @@
     <index>0</index>
     <patch>0</patch>
     <start>7168</start>
-    <end>13000</end>
+    <end>9760</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="NCVariable&lt;double&gt;">
     <variable>g.mass</variable>
     <index>1</index>
     <patch>0</patch>
-    <start>13312</start>
-    <end>19144</end>
+    <start>10240</start>
+    <end>12832</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="NCVariable&lt;Matrix3&gt;">
     <variable>g.stressFS</variable>
     <index>0</index>
     <patch>0</patch>
-    <start>19456</start>
-    <end>71944</end>
+    <start>13312</start>
+    <end>36640</end>
     <filename>p00000.data</filename>
   </Variable>
   <Variable type="NCVariable&lt;Matrix3&gt;">
     <variable>g.stressFS</variable>
     <index>1</index>
     <patch>0</patch>
-    <start>72704</start>
-    <end>125192</end>
+    <start>36864</start>
+    <end>60192</end>
     <filename>p00000.data</filename>
   </Variable>
 </Uintah_Output>

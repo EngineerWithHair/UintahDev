@@ -857,7 +857,7 @@ std::cout<<"*************"<<std::endl;
 
     
     // JIAHAO: injury Allocations
-    new_dw->allocateAndPut(pInjury_new, lb->pInjuryLabel, pset);
+    new_dw->allocateAndPut(pInjury_new, lb->pInjuryLabel_preReloc, pset);
     
     //std::cout<<"pInjury_new allocated to pset"<<std::endl;
 

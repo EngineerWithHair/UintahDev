@@ -25,7 +25,7 @@
 #ifndef SCI_BOOST_DEFS_H
 #define SCI_BOOST_DEFS_H
 
-#define HAVE_BOOST 1
+
 
 
 #endif

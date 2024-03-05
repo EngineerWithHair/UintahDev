@@ -29,8 +29,8 @@
 #  error "Don't #include this file.  #include <Core/Util/Environment.h> instead"
 #endif
 
-#define SCIRUN_SRCDIR "/home/jwei34/Uintah/src"
-#define SCIRUN_OBJDIR "/home/jwei34/Uintah/dbg"
+#define SCIRUN_SRCDIR "/home/jwei34/UintahDev/src"
+#define SCIRUN_OBJDIR "/home/jwei34/UintahDev/dbg"
 
 #endif
 

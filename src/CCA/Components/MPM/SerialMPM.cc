@@ -426,7 +426,6 @@ void SerialMPM::scheduleInitialize(const LevelP& level,
   t->computes(lb->pDeformationMeasureLabel);
   t->computes(lb->pStressLabel);
   // JIAHAO: injury
-  t->computes(lb->pInjuryLabel);
   t->computes(lb->pVelGradLabel);
   t->computes(lb->pTemperatureGradientLabel);
   t->computes(lb->pSizeLabel);
@@ -837,7 +836,7 @@ SerialMPM::scheduleTimeAdvance(const LevelP & level,
   scheduleInterpolateToParticlesAndUpdate(sched, patches, matls);
   scheduleComputeParticleGradients(       sched, patches, matls);
   scheduleComputeStressTensor(            sched, patches, matls);
-  // JIAHAO: add shceduleComputeInjury here:
+  // JIAHAO: add scheduleComputeInjury here:
   scheduleComputeInjury(                  sched, patches, matls);
 
   if(flags->d_computeScaleFactor){
@@ -1239,8 +1238,8 @@ void SerialMPM::scheduleComputeInjury(SchedulerP& sched,
   // update 02/12/2024 I didn't define reduction type. sus utility still runs
   t->requires(Task::OldDW, lb->pDeformationMeasureLabel, Ghost::None);
   t->requires(Task::OldDW, lb->pInjuryLabel, Ghost::AroundNodes);
-  t->computes(lb->pInjuryLabel);
-  // t->computes(lb->pInjuryLabel_preReloc);
+  //t->computes(lb->pInjuryLabel);
+  t->computes(lb->pInjuryLabel_preReloc);
 
   sched->addTask(t, patches, matls);
 
