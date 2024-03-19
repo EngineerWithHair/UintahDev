@@ -264,8 +264,10 @@ CCA/Components/MPM/Solver/FakePetscSolver.o: \
  /usr/include/assert.h ../src/Core/Math/TntJama/tnt_cmat.h \
  ../src/Core/Math/Int130.h Core/Util/Endian.h \
  include/sci_defs/config_defs.h ../src/Core/Parallel/UintahMPI.h \
- include/sci_defs/mpi_defs.h /usr/local/openmpi/include/mpi.h \
- /usr/local/openmpi/include/mpi_portable_platform.h \
+ include/sci_defs/mpi_defs.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  ../src/CCA/Components/MPM/Solver/Solver.h /usr/include/c++/11/set \

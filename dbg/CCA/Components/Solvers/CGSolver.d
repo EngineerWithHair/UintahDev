@@ -233,8 +233,9 @@ CCA/Components/Solvers/CGSolver.o: \
  ../src/Core/Parallel/UintahParams.h ../src/Core/Grid/TaskStatus.h \
  ../src/Core/Util/DOUT.hpp ../src/Core/Parallel/ProcessorGroup.h \
  ../src/Core/Parallel/UintahMPI.h include/sci_defs/mpi_defs.h \
- /usr/local/openmpi/include/mpi.h \
- /usr/local/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  include/sci_defs/compile_defs.h /usr/include/c++/11/iomanip \

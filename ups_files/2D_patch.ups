@@ -64,7 +64,7 @@
               <upper>[8,8,8]</upper>
               <resolution>[8,8,8]</resolution>
               <extraCells>[0,0,0]</extraCells>
-              <patches>[2,1,1]</patches>
+              <patches>[4,4,1]</patches>
            </Box>
        </Level>
     </Grid>
@@ -123,7 +123,7 @@
                      <min>[2,2,2]</min>
                      <max>[3,3,3]</max>
                   </box>
-                  <res>[4,1,1]</res>
+                  <res>[4,4,1]</res>
                   <velocity>[0,0,0.0]</velocity>
                   <temperature>12</temperature>
                   <color> 0 </color>

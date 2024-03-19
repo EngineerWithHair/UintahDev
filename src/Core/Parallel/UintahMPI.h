@@ -27,7 +27,7 @@
 
 #include <sci_defs/mpi_defs.h>
 
-#include </usr/local/openmpi/include/mpi.h>
+#include </usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h>
 
 #include <cstdio> // printf
 #include <chrono>

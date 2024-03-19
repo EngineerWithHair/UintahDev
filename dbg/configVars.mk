@@ -174,8 +174,8 @@ CUDA_LIBRARY     :=
 
 KOKKOS_USING_GPU := 
 
-MPI_INCLUDE := -I/usr/local/openmpi/include
-MPI_LIBRARY := -Wl,-rpath -Wl,/usr/local/openmpi/lib -L/usr/local/openmpi/lib  -lmpi -lrt 
+MPI_INCLUDE := -I/usr/lib/x86_64-linux-gnu/openmpi/include
+MPI_LIBRARY := -Wl,-rpath -Wl,/usr/lib/x86_64-linux-gnu/openmpi/lib -L/usr/lib/x86_64-linux-gnu/openmpi/lib  -lmpi -lrt 
 
 # not blank.  Its "value" is not useful.
 HAVE_MPI := yes
@@ -188,7 +188,7 @@ XALAN_PATH :=
 PERL := /usr/bin/perl
 SED := sed
 
-MAKE_PARALLELISM := 2
+MAKE_PARALLELISM := 8
 
 LARGESOS := no
 

@@ -2,9 +2,10 @@ Core/Disclosure/TypeDescription.o: \
  ../src/Core/Disclosure/TypeDescription.cc /usr/include/stdc-predef.h \
  ../src/Core/Disclosure/TypeDescription.h \
  ../src/Core/Parallel/UintahMPI.h include/sci_defs/mpi_defs.h \
- /usr/local/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
- /usr/local/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
  /usr/include/c++/11/cstdio \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

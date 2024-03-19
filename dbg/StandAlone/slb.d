@@ -269,8 +269,10 @@ StandAlone/slb.o: ../src/StandAlone/slb.cc /usr/include/stdc-predef.h \
  ../src/Core/Grid/Variables/ComputeSet.h ../src/Core/Util/constHandle.h \
  ../src/Core/Parallel/UintahParallelPort.h ../src/Core/Util/InfoMapper.h \
  ../src/Core/Parallel/ProcessorGroup.h ../src/Core/Parallel/UintahMPI.h \
- include/sci_defs/mpi_defs.h /usr/local/openmpi/include/mpi.h \
- /usr/local/openmpi/include/mpi_portable_platform.h \
+ include/sci_defs/mpi_defs.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  ../src/Core/Util/DOUT.hpp /usr/include/c++/11/iomanip \

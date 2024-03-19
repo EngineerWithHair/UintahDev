@@ -146,8 +146,10 @@ Core/Parallel/Parallel.o: ../src/Core/Parallel/Parallel.cc \
  ../src/Core/Exceptions/Exception.h include/sci_defs/error_defs.h \
  ../src/Core/Malloc/Allocator.h include/sci_defs/malloc_defs.h \
  ../src/Core/Parallel/ProcessorGroup.h ../src/Core/Parallel/UintahMPI.h \
- include/sci_defs/mpi_defs.h /usr/local/openmpi/include/mpi.h \
- /usr/local/openmpi/include/mpi_portable_platform.h \
+ include/sci_defs/mpi_defs.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \

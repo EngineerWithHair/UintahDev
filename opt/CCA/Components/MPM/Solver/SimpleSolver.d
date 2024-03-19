@@ -278,8 +278,10 @@ CCA/Components/MPM/Solver/SimpleSolver.o: \
  /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
  ../src/Core/Parallel/ProcessorGroup.h ../src/Core/Parallel/UintahMPI.h \
- include/sci_defs/mpi_defs.h /usr/local/openmpi/include/mpi.h \
- /usr/local/openmpi/include/mpi_portable_platform.h \
+ include/sci_defs/mpi_defs.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  ../src/Core/Grid/Patch.h ../src/Core/Grid/Grid.h \

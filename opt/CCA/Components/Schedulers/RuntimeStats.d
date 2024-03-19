@@ -189,8 +189,10 @@ CCA/Components/Schedulers/RuntimeStats.o: \
  /usr/include/c++/11/bits/sstream.tcc \
  ../src/Core/ProblemSpec/ProblemSpecP.h ../src/Core/Util/DOUT.hpp \
  ../src/Core/Parallel/ProcessorGroup.h ../src/Core/Parallel/UintahMPI.h \
- include/sci_defs/mpi_defs.h /usr/local/openmpi/include/mpi.h \
- /usr/local/openmpi/include/mpi_portable_platform.h \
+ include/sci_defs/mpi_defs.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h \
+ /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h \
  /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
  /usr/include/c++/11/limits /usr/include/c++/11/ctime \
  /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/atomic \
